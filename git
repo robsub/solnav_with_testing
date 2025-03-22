@@ -1,0 +1,31 @@
+Steps to Commit and Push Changes
+Check Status:
+
+bash
+Copy
+Edit
+git status
+This shows what files have been modified or are untracked.
+
+Stage Changes:
+
+bash
+Copy
+Edit
+git add .
+This stages all changes in your directory.
+
+Commit Changes:
+
+bash
+Copy
+Edit
+git commit -m "your meaningful message here"
+Push Changes:
+Since you've already set the remote and branch, just run:
+
+bash
+Copy
+Edit
+git push
+
