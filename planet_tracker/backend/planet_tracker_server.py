@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS  # Add this import
 from planet_calculations import calculate_planet_positions
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)  # Add this line to enable CORS for all routes
 
 @app.route('/planet_positions', methods=['GET'])
 def get_planet_positions():
@@ -10,7 +12,6 @@ def get_planet_positions():
     latitude = float(request.args.get('latitude', 53.3811))
     longitude = float(request.args.get('longitude', -1.4701))
 
-    
     planet_positions = calculate_planet_positions(date_str, latitude, longitude)
     return jsonify(planet_positions)
 
